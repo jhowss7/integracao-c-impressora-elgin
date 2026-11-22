@@ -166,7 +166,7 @@ static char *lerArquivo(const char *caminho) {
 
 /* ===================== Funcoes da impressora ===================== */
 
-/* Configura os par‚metros de conex„o caso ela esteja fechada */
+/* Configura os par√¢metros de conex√£o caso ela esteja fechada */
 void configurarConexao(void) {
     if (!conexaoAberta) {
         tipo = lerInteiro("Digite o tipo de conexao (1 para USB, 2 para Serial, etc.): ");
@@ -180,7 +180,7 @@ void configurarConexao(void) {
     }
 }
 
-/* Abre a conex„o com a impressora  */
+/* Abre a conex√£o com a impressora  */
 void abrirConexao(void) {
     if (!conexaoAberta){
         int retorno = AbreConexaoImpressora(tipo, modelo, conexao, parametro);
@@ -195,7 +195,7 @@ void abrirConexao(void) {
     }
 }
 
-/* Fecha a conex„o ativa com a impressora */
+/* Fecha a conex√£o ativa com a impressora */
 void fecharConexao(void) {
 	 if (conexaoAberta){
         int retorno = FechaConexaoImpressora();
@@ -210,7 +210,7 @@ void fecharConexao(void) {
     }
 }
 
-/* LÍ um texto digitado pelo usu·rio e realiza a impress„o com base na quantidade de cÛpias informada */
+/* L√™ um texto digitado pelo usu√°rio e realiza a impress√£o com base na quantidade de c√≥pias informada */
 void imprimirTexto(void) {
    if (!conexaoAberta) { 
 		printf("Conexao fechada. Abra a conexao antes (opcao 2).\n");
@@ -254,7 +254,7 @@ void imprimirQRCode(void) {
 	}
 }
 
-/* Imprime um cÛdigo de barras  */
+/* Imprime um c√≥digo de barras  */
 void imprimirCodigoBarras(void) {
     if (!conexaoAberta) { 
 		printf("Conexao fechada. Abra a conexao antes (opcao 2).\n");
@@ -269,7 +269,7 @@ void imprimirCodigoBarras(void) {
 		Corte(5);
 }
 
-/* realiza a impress„o do cancelamento do XML SAT */
+/* realiza a impress√£o do cancelamento do XML SAT */
 void imprimirXMLSAT(void) {
     if (!conexaoAberta) { 
 		printf("Conexao fechada. Abra a conexao antes (opcao 2).\n");
@@ -290,7 +290,7 @@ void imprimirXMLSAT(void) {
 		Corte(5);
 }
 
-/* realiza a impress„o do cancelamento do XML Cancelamento SAT */
+/* realiza a impress√£o do cancelamento do XML Cancelamento SAT */
 void imprimirXMLCancelamentoSAT(void) {
     if(!conexaoAberta){ 
 			printf("Conexao fechada. Abra a conexao antes (opcao 2).\n");
@@ -311,7 +311,7 @@ void imprimirXMLCancelamentoSAT(void) {
 		Corte(5);    
 }
 
-/* Aciona a abertura da gaveta de dinheiro usando a funÁ„o especÌfica da Elgin */
+/* Aciona a abertura da gaveta de dinheiro usando a fun√ß√£o espec√≠fica da Elgin */
 void abrirGavetaElgin(void) {
     if (!conexaoAberta) { 
 		printf("Conexao fechada. Abra a conexao antes (opcao 2).\n");
@@ -340,7 +340,7 @@ void abrirGaveta(void) {
 	}
 }
 
-/* Emite sinais sonoros na impressora de acordo com a quantidade informada pelo usu·rio */
+/* Emite sinais sonoros na impressora de acordo com a quantidade informada pelo usu√°rio */
 void emitirSinalSonoro(void) {
 
     if (!conexaoAberta) {
@@ -367,7 +367,7 @@ void emitirSinalSonoro(void) {
     }
 }
 
-/* Exibe o menu principal de opÁıes do sistema */
+/* Exibe o menu principal de op√ß√µes do sistema */
 void exibirMenu(void) {
     printf("\n*************************************************\n");
     printf("**************** MENU IMPRESSORA ****************\n");
@@ -378,7 +378,7 @@ void exibirMenu(void) {
 	printf("3  - Fechar Conexao\n");
 	printf("4  - Imprimir Texto\n");
 	printf("5  - Imprimir QRCode\n");
-	printf("6  - Imprimir CÛdigo de Barras\n");
+	printf("6  - Imprimir C√≥digo de Barras\n");
 	printf("7  - Imprimir XMLSAT\n");
 	printf("8  - Imprimir XML Cancelamento SAT\n");
 	printf("9  - Abrir Gaveta Elgin\n");
@@ -388,7 +388,7 @@ void exibirMenu(void) {
     printf("--------------------------------------\n");
 }
 
-/* Realiza a validaÁ„o de usu·rio e senha com limite de atÈ 3 tentativas de acesso */
+/* Realiza a valida√ß√£o de usu√°rio e senha com limite de at√© 3 tentativas de acesso */
 int Login(void){
 	char usuario[50], senha[50];
 	int j=2, tentativa;
@@ -411,7 +411,7 @@ int Login(void){
 	return 0;
 }
 
-/* FunÁ„o principal  autenticaÁ„o e execuÁ„o do menu */
+/* Fun√ß√£o principal  autentica√ß√£o e execu√ß√£o do menu */
 int main(void) {
     
 	if (!carregarDLL()) {
@@ -478,7 +478,7 @@ int main(void) {
 		}
 			}else{
 				system("cls");
-				printf("\nACESSO NEGADO!!!\n");
+				printf("\nACESSO NEGADO!!!\n\n");
     			FreeLibrary(dll);
     			return 1;
 			}
