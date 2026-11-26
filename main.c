@@ -217,7 +217,6 @@ void imprimirTexto(void) {
 }
 	char texto[200];
 	capturarEntrada("Texto a imprimir: ", texto, sizeof(texto));
-
 	
 		int retorno = ImpressaoTexto(texto, 1, 4, 0); 
 		if (retorno >= 0){
@@ -228,7 +227,6 @@ void imprimirTexto(void) {
 		Corte(5);
 		}
 
-
 /* imprime o QR Code */
 void imprimirQRCode(void) {
     if (!conexaoAberta) { 
@@ -237,7 +235,6 @@ void imprimirQRCode(void) {
 }
 	char dados[200];
 	capturarEntrada("Texto a Imprimir: ", dados, sizeof(dados));
-
 	
 		int retorno = ImpressaoQRCode(dados, 6, 4);
 		if(retorno>=0){
@@ -342,7 +339,6 @@ void emitirSinalSonoro(void) {
         printf("Conexao fechada. Abra a conexao antes (opcao 2).\n");
         return;
     }
-    
     int retorno = SinalSonoro(4, 50, 5);
   
     if(retorno == 0) {
