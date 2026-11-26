@@ -210,7 +210,7 @@ void fecharConexao(void) {
     }
 }
 
-/* Lê um texto digitado pelo usuário e realiza a impressão com base na quantidade de cópias informada */
+/* Lê um texto digitado pelo usuário e realiza a impressão */
 void imprimirTexto(void) {
    if (!conexaoAberta) { 
 		printf("Conexao fechada. Abra a conexao antes (opcao 2).\n");
@@ -218,19 +218,17 @@ void imprimirTexto(void) {
 }
 	char texto[200];
 	capturarEntrada("Texto a imprimir: ", texto, sizeof(texto));
-	int copias = lerInteiro("Quantas copias? ");
-	int i;
+
 	
-	for (i = 1; i <= copias; i++) { 
 		int retorno = ImpressaoTexto(texto, 1, 4, 0); 
 		if (retorno >= 0){
-			printf("Copia %d impressa!\n", i);
+			printf("Impressão Bem-sucedida!\n");
 		}else{
 			printf("Erro ao imprimir. Codigo: %d\n", retorno);
 		}
-	}
 		Corte(5);
-}
+		}
+
 
 /* imprime o QR Code */
 void imprimirQRCode(void) {
@@ -240,19 +238,17 @@ void imprimirQRCode(void) {
 }
 	char dados[200];
 	capturarEntrada("Texto a Imprimir: ", dados, sizeof(dados));
-	int copias = lerInteiro("Quantas copias? ");
-	int i;
+
 	
-	for(i=1; i<=copias; i++){
 		int retorno = ImpressaoQRCode(dados, 6, 4);
 		if(retorno>=0){
-			printf("Copia %d impressa!\n", i);
+			printf("Impressão Bem-sucedida!\n");
 		}else{
 			printf("Erro ao imprimir. Codigo: %d\n", retorno);
 		}
 			Corte(5);
 	}
-}
+
 
 /* Imprime um código de barras  */
 void imprimirCodigoBarras(void) {
@@ -340,26 +336,16 @@ void abrirGaveta(void) {
 	}
 }
 
-/* Emite sinais sonoros na impressora de acordo com a quantidade informada pelo usuário */
+/* Emite sinais sonoros na impressora  */
 void emitirSinalSonoro(void) {
 
     if (!conexaoAberta) {
         printf("Conexao fechada. Abra a conexao antes (opcao 2).\n");
         return;
     }
-
-    int i, retorno = -1;
-    int qtd = lerInteiro("Quantas vezes? ");
-
-    if (qtd <= 0) {
-        printf("Informe uma quantidade valida!\n");
-        return;
-    }
-
-    for(i = 1; i <= qtd; i++) {
-        retorno = SinalSonoro(4, 50, 5);
-    }
-
+    
+    int retorno = SinalSonoro(4, 50, 5);
+  
     if(retorno == 0) {
         printf("Sinal Emitido com Sucesso");
     } else {
